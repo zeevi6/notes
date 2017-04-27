@@ -1,6 +1,6 @@
 # this keyword
 
-1. Implicit Binding
+### Implicit Binding
 
 호출하는 시점에 dot (‘.’) 의 왼쪽에 있는것이 this의 context.
 
@@ -59,11 +59,11 @@ jim.mother.sayName();		// stacy
 
 - - - -
 
-2. Explicit Binding
+### Explicit Binding
 
 “Call, apply, bind”
 
-#### call
+#### 1. call
 
 ```javascript
 var sayName = function() {
@@ -80,7 +80,7 @@ sayName.call(jeff);
 
 sayName 을 jeff 의 context로 explicitly call 한다.  sayName을 call 하면 function내부의 코드를 곧바로 실행한다.
 
-#### apply
+#### 2. apply
 
 ```javascript
 var sayName = function(lang1, lang2, lang3) {
@@ -100,7 +100,7 @@ sayName.apply(jeff, language);
 
 function에 array를 pass하고싶을때 apply 사용한다. array item을 call로 전부 pass 해도 결과는 같다.
 
-#### bind
+#### 3. bind
 
 ```javascript
 var sayName = function(lang1, lang2, lang3) {
@@ -123,7 +123,7 @@ bind는 call과 거의 같지만,  call의 예제처럼 기존 sayName을 실행
 
 - - - -
 
-3. new Binding
+### new Binding
 
 ```javascript
 // constructor function
@@ -141,7 +141,7 @@ new 키워드로 function을 실행하면 그 function 내부의 this는 새로�
 
 - - - -
 
-4. window Binding
+### window Binding
 
 ```javascript
 var sayAge = function() {
