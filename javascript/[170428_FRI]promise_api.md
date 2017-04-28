@@ -5,8 +5,11 @@
 Promise API를 쓰는 native API들은 다음과 같다.
 
 [Battery Status API - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Battery_Status_API) 
+
 [Fetch API - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Fetch_API)
+
 [Service Worker API - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API)
+
 
 - - - -
 
