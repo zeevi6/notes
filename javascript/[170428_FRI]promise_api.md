@@ -164,6 +164,10 @@ Promise.race([req1, req2]).then(function(one) {
 ##### (reference)
 
 >  [JavaScript Promises](https://davidwalsh.name/promises)
+
 >  [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth)
+
 >  [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
 >  [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth)
+
