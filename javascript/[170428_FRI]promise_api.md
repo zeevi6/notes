@@ -11,7 +11,6 @@
 [Service Worker API - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API)
 
 
-- - - -
 
 ### Promise의 상태
 
