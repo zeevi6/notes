@@ -1,4 +1,4 @@
-# this keyword
+# Binding 'this'
 
 ### Implicit Binding
 
