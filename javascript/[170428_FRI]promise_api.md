@@ -13,6 +13,15 @@
 
 - - - -
 
+### Promise의 상태
+
+* pending:  초기상태, fulfilled/rejected 이전의 상태
+* fulfilled: 성공적으로 작업을 완료한 상태 -> value
+* rejected: 작업을 실패한 상태 -> reason(error)
+
+> fulfilled/rejected 상태를 지나 pending 이전의 상태는 settled라고 한다. Settled = resolved 같은말.
+
+
 ### 사용방법
 
  new Promise()는 setTimeout 이나 XMLHttpRequest 같은 async 작업을 할 때에만 사용해야한다! resolve, reject의 호출 타이밍은 개발자의 의도에 따라 달라진다.
