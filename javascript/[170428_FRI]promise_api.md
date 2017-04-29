@@ -1,7 +1,7 @@
 # PROMISE API
 
 
- Promise는 ‘언젠가 사용 가능해질 값의 프록시’라고 정의할 수 있다. (프록시? 프로퍼티 lookup, 할당, enumeration, 함수 실행 등의 기본적인 동작에 대한 커스터마이징). Synchronous, asynchronous 두 가지 경우 모두에 사용 가능하다. 주로 asynchronous 작업에 더 적절하다.
+ Promise는 ‘언젠가 사용 가능해질 수도 있고 아닐수도 있는 값의 프록시’라고 정의할 수 있다. (프록시? 프로퍼티 lookup, 할당, enumeration, 함수 실행 등의 기본적인 동작에 대한 커스터마이징). Synchronous, asynchronous 두 가지 경우 모두에 사용 가능하다. 주로 asynchronous 작업에 더 적절하다.
  대표적인 asynchronous API인 XMLHttpRequest API는 async하지만, Promise API를 사용하지는 않는다. Promise API를 쓰는(결과값으로 Promise를  return하는) native API들은 다음과 같다.
 
 [Battery Status API - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Battery_Status_API) 
