@@ -2,6 +2,7 @@
 
 #### Step 1 - Adding the MongoDB Repository
 
+
 Official MongoDB repo 키 등록
 
 ```
@@ -24,8 +25,11 @@ Update
 $ sudo apt-get update
 ```
 
+---
+
 
 #### Step 2 - Installing and Verifying MongoDB
+
 
 Latest stable version 패키지 설치
 
