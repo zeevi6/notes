@@ -24,7 +24,7 @@ whenAllTheseHaveLoaded([img1, img2]).callThis(function() {
 img1.ready().then(function() {
 	// 로드 완료 했거나 혹은 완료 후에 여기 해라
 }, function() {
-  // 실패했으면 여기로..
+	// 실패했으면 여기로..
 });
 
 // 그리고
