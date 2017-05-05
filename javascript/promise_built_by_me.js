@@ -21,7 +21,6 @@ function myPromise(func) {
 };
 
 function doSomething() {
-    debugger;
     console.log("I will doSomething");
     return new myPromise(function(resolve) {
         console.log("I'm a new myPromise");
