@@ -7,14 +7,14 @@
 img1.callThisIfLoadedOrWhenLoaded(function() {
 	// 로드 완료 했거나 혹은 완료 후에 여기 해라
 }).orIfFailedCallThis(function() {
-  // 실패했으면 여기로..
+	// 실패했으면 여기로..
 });
 
 // 그리고
 whenAllTheseHaveLoaded([img1, img2]).callThis(function() {
-  // img1, img2 둘 다 로드완료하면 여기 해라
+	// img1, img2 둘 다 로드완료하면 여기 해라
 }).orIfSomeFailedCallThis(function() {
-  // 뭐라도 실패했으면 여기로..
+	// 뭐라도 실패했으면 여기로..
 });
 ```
 
@@ -29,9 +29,9 @@ img1.ready().then(function() {
 
 // 그리고
 Promise.all([img1.ready(), img2.ready()]).then(function() {
-  // img1, img2 둘 다 로드완료하면 여기 해라
+	// img1, img2 둘 다 로드완료하면 여기 해라
 }, function() {
-  // 뭐라도 실패했으면 여기로..
+	// 뭐라도 실패했으면 여기로..
 });
 ```
 
