@@ -1,0 +1,759 @@
+hong@hong-VirtualBox:~$ ls
+bin             swift                          다운로드  비디오  템플릿
+downloads       swift-3.1-RELEASE-ubuntu16.04  문서      사진
+kitura-example  공개                           바탕화면  음악
+hong@hong-VirtualBox:~$ brew update
+프로그램 'brew'을(를) 설치하지 않습니다. 다음을 입력해 설치할 수 있습니다:
+sudo apt install linuxbrew-wrapper
+hong@hong-VirtualBox:~$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+[sudo] password for hong: 
+Executing: /tmp/tmp.A8A59Ug5ag/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv
+EA312927
+gpg: requesting key EA312927 from hkp server keyserver.ubuntu.com
+gpg: key EA312927: public key "MongoDB 3.2 Release Signing Key <packaging@mongodb.com>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+hong@hong-VirtualBox:~$ version
+version: 명령을 찾을 수 없습니다
+hong@hong-VirtualBox:~$ ubuntu
+ubuntu: 명령을 찾을 수 없습니다
+hong@hong-VirtualBox:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.2 LTS
+Release:	16.04
+Codename:	xenial
+hong@hong-VirtualBox:~$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+Executing: /tmp/tmp.Fis9wSlpUw/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv
+EA312927
+gpg: requesting key EA312927 from hkp server keyserver.ubuntu.com
+gpg: key EA312927: "MongoDB 3.2 Release Signing Key <packaging@mongodb.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+hong@hong-VirtualBox:~$ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+hong@hong-VirtualBox:~$ sudo apt-get update
+기존:1 https://deb.nodesource.com/node_6.x xenial InRelease
+기존:2 http://kr.archive.ubuntu.com/ubuntu xenial InRelease                              
+받기:3 http://kr.archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]             
+받기:4 http://kr.archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]           
+받기:5 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [527 kB]   
+무시:6 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease               
+받기:7 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]              
+받기:8 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [513 kB]    
+받기:9 http://kr.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [213 kB]   
+받기:10 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release [3,462 B]      
+받기:11 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release.gpg [801 B]    
+받기:12 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 Packages [5,904 B]
+내려받기 1,570 k바이트, 소요시간 1초 (790 k바이트/초)
+패키지 목록을 읽는 중입니다... 완료
+hong@hong-VirtualBox:~$ sudo apt-get install -y mongodb-org
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다       
+상태 정보를 읽는 중입니다... 완료
+The following additional packages will be installed:
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+다음 새 패키지를 설치할 것입니다:
+  mongodb-org mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+0개 업그레이드, 5개 새로 설치, 0개 제거 및 92개 업그레이드 안 함.
+51.6 M바이트 아카이브를 받아야 합니다.
+이 작업 후 214 M바이트의 디스크 공간을 더 사용하게 됩니다.
+받기:1 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-shell amd64 3.2.13 [5,260 kB]
+받기:2 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-server amd64 3.2.13 [9,973 kB]
+받기:3 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-mongos amd64 3.2.13 [4,664 kB]
+받기:4 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org-tools amd64 3.2.13 [31.7 MB]
+받기:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2/multiverse amd64 mongodb-org amd64 3.2.13 [3,564 B]
+내려받기 51.6 M바이트, 소요시간 4초 (10.8 M바이트/초)
+Selecting previously unselected package mongodb-org-shell.
+(데이터베이스 읽는중 ...현재 169181개의 파일과 디렉터리가 설치되어 있습니다.)
+Preparing to unpack .../mongodb-org-shell_3.2.13_amd64.deb ...
+Unpacking mongodb-org-shell (3.2.13) ...
+Selecting previously unselected package mongodb-org-server.
+Preparing to unpack .../mongodb-org-server_3.2.13_amd64.deb ...
+Unpacking mongodb-org-server (3.2.13) ...
+Selecting previously unselected package mongodb-org-mongos.
+Preparing to unpack .../mongodb-org-mongos_3.2.13_amd64.deb ...
+Unpacking mongodb-org-mongos (3.2.13) ...
+Selecting previously unselected package mongodb-org-tools.
+Preparing to unpack .../mongodb-org-tools_3.2.13_amd64.deb ...
+Unpacking mongodb-org-tools (3.2.13) ...
+Selecting previously unselected package mongodb-org.
+Preparing to unpack .../mongodb-org_3.2.13_amd64.deb ...
+Unpacking mongodb-org (3.2.13) ...
+Processing triggers for man-db (2.7.5-1) ...
+mongodb-org-shell (3.2.13) 설정하는 중입니다 ...
+mongodb-org-server (3.2.13) 설정하는 중입니다 ...
+시스템 사용자 `mongodb' (114) 추가 ...
+새로운 사용자 `mongodb' (114) 을(를) 그룹 `nogroup'(으)로 추가 ...
+홈 디렉토리 '/home/mongodb' 을(를) 만들지 않습니다.
+그룹 `mongodb' (GID 123) 추가 ...
+완료.
+'mongodb' 사용자를 'mongodb' 그룹에 추가 중...
+사용자 mongodb을(를) mongodb 그룹에 등록 중
+완료.
+mongodb-org-mongos (3.2.13) 설정하는 중입니다 ...
+mongodb-org-tools (3.2.13) 설정하는 중입니다 ...
+mongodb-org (3.2.13) 설정하는 중입니다 ...
+hong@hong-VirtualBox:~$ sudo nano /etc/systemd/system/mongodb.service
+hong@hong-VirtualBox:~$ sudo vim /etc/systemd/system/mongodb.service
+hong@hong-VirtualBox:~$ sudo systemctl start mongodb
+hong@hong-VirtualBox:~$ sudo systemctl status mongodb
+● mongodb.service - High-performance, schema-free document-oriented database
+   Loaded: loaded (/etc/systemd/system/mongodb.service; disabled; vendor preset: enabled)
+   Active: active (running) since 화 2017-05-02 14:10:22 KST; 8s ago
+ Main PID: 6861 (mongod)
+   CGroup: /system.slice/mongodb.service
+           └─6861 /usr/bin/mongod --quiet --config /etc/mongod.conf
+
+ 5월 02 14:10:22 hong-VirtualBox systemd[1]: Started High-performance, schema-free document
+lines 1-8/8 (END)
+hong@hong-VirtualBox:~$ sudo systemctl enable mongodb
+Created symlink from /etc/systemd/system/multi-user.target.wants/mongodb.service to /etc/systemd/system/mongodb.service.
+hong@hong-VirtualBox:~$ sudo systemctl mongodb start
+Unknown operation mongodb.
+hong@hong-VirtualBox:~$ sudo systemctl mongodb start
+Unknown operation mongodb.
+hong@hong-VirtualBox:~$ service mongodb start
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to start 'mongodb.service'.
+Authenticating as: Hong Gwon,,, (hong)
+Password: 
+hong@hong-VirtualBox:~$ sudo service mongodb start
+hong@hong-VirtualBox:~$ service mongodb start
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to start 'mongodb.service'.
+Authenticating as: Hong Gwon,,, (hong)
+Password: 
+hong@hong-VirtualBox:~$ sudo systemctl mongodb start
+Unknown operation mongodb.
+hong@hong-VirtualBox:~$ sudo mongodb
+sudo: mongodb: command not found
+hong@hong-VirtualBox:~$ sudo mongod
+2017-05-02T14:13:58.475+0900 I CONTROL  [initandlisten] MongoDB starting : pid=7356 port=27017 dbpath=/data/db 64-bit host=hong-VirtualBox
+2017-05-02T14:13:58.475+0900 I CONTROL  [initandlisten] db version v3.2.13
+2017-05-02T14:13:58.475+0900 I CONTROL  [initandlisten] git version: 23899209cad60aaafe114f6aea6cb83025ff51bc
+2017-05-02T14:13:58.475+0900 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2017-05-02T14:13:58.476+0900 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-05-02T14:13:58.476+0900 I CONTROL  [initandlisten] modules: none
+2017-05-02T14:13:58.476+0900 I CONTROL  [initandlisten] build environment:
+2017-05-02T14:13:58.477+0900 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2017-05-02T14:13:58.477+0900 I CONTROL  [initandlisten]     distarch: x86_64
+2017-05-02T14:13:58.477+0900 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-05-02T14:13:58.477+0900 I CONTROL  [initandlisten] options: {}
+2017-05-02T14:13:58.502+0900 E NETWORK  [initandlisten] listen(): bind() failed errno:98 Address already in use for socket: 0.0.0.0:27017
+2017-05-02T14:13:58.502+0900 E NETWORK  [initandlisten]   addr already in use
+2017-05-02T14:13:58.503+0900 E STORAGE  [initandlisten] Failed to set up sockets during startup.
+2017-05-02T14:13:58.503+0900 I CONTROL  [initandlisten] dbexit:  rc: 48
+hong@hong-VirtualBox:~$ sudo status mongodb
+sudo: status: command not found
+hong@hong-VirtualBox:~$ sudo mongod -f /etc/mongodb.conf
+Error reading config file: No such file or directory
+try 'mongod --help' for more information
+hong@hong-VirtualBox:~$ sudo systemctl unmaks mongodb
+Unknown operation unmaks.
+hong@hong-VirtualBox:~$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+Executing: /tmp/tmp.fGNuyOii4e/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv
+EA312927
+gpg: requesting key EA312927 from hkp server keyserver.ubuntu.com
+gpg: key EA312927: "MongoDB 3.2 Release Signing Key <packaging@mongodb.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+hong@hong-VirtualBox:~$ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+hong@hong-VirtualBox:~$ sudo apt-get update
+기존:1 http://kr.archive.ubuntu.com/ubuntu xenial InRelease
+기존:2 http://kr.archive.ubuntu.com/ubuntu xenial-updates InRelease                      
+기존:3 http://kr.archive.ubuntu.com/ubuntu xenial-backports InRelease                    
+기존:4 https://deb.nodesource.com/node_6.x xenial InRelease                              
+무시:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease               
+받기:6 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]   
+기존:7 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release 
+내려받기 102 k바이트, 소요시간 1초 (69.8 k바이트/초)                     
+패키지 목록을 읽는 중입니다... 완료
+hong@hong-VirtualBox:~$ sudo apt-get install -y mongodb-org
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다       
+상태 정보를 읽는 중입니다... 완료
+mongodb-org is already the newest version (3.2.13).
+0개 업그레이드, 0개 새로 설치, 0개 제거 및 92개 업그레이드 안 함.
+hong@hong-VirtualBox:~$ sudo nano /etc/systemd/system/mongodb.service
+hong@hong-VirtualBox:~$ sudo systemctl start mongodb
+Warning: mongodb.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+hong@hong-VirtualBox:~$ systemctl daemon-reload
+==== AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon ===
+systemd 상태를 다시 불러오려면 인증이 필요합니다.
+Authenticating as: Hong Gwon,,, (hong)
+Password: 
+==== AUTHENTICATION COMPLETE ===
+hong@hong-VirtualBox:~$ sudo systemctl start mongodb
+hong@hong-VirtualBox:~$ sudo systemctl status mongodb
+● mongodb.service - High-performance, schema-free document-oriented database
+   Loaded: loaded (/etc/systemd/system/mongodb.service; enabled; vendor preset: enabled)
+   Active: active (running) since 화 2017-05-02 14:10:22 KST; 9min ago
+ Main PID: 6861 (mongod)
+   CGroup: /system.slice/mongodb.service
+           └─6861 /usr/bin/mongod --quiet --config /etc/mongod.conf
+
+ 5월 02 14:10:22 hong-VirtualBox systemd[1]: Started High-performance, schema-free document
+ 5월 02 14:13:01 hong-VirtualBox systemd[1]: Started High-performance, schema-free document
+ 5월 02 14:19:03 hong-VirtualBox systemd[1]: Started High-performance, schema-free document
+ 5월 02 14:19:38 hong-VirtualBox systemd[1]: Started High-performance, schema-free document
+lines 1-11/11 (END)
+hong@hong-VirtualBox:~$ sudo systemctl enable mongodb
+hong@hong-VirtualBox:~$ sudo systemctl mongodb start
+Unknown operation mongodb.
+hong@hong-VirtualBox:~$ sudo systemctl start mongodb
+hong@hong-VirtualBox:~$ sudo ufw status
+상태: 비활성
+hong@hong-VirtualBox:~$ mongo
+MongoDB shell version: 3.2.13
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+Server has startup warnings: 
+2017-05-02T14:10:22.587+0900 I CONTROL  [initandlisten] 
+2017-05-02T14:10:22.587+0900 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-05-02T14:10:22.587+0900 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-05-02T14:10:22.587+0900 I CONTROL  [initandlisten] 
+> show dbs
+local  0.000GB
+> use mongotest
+switched to db mongotest
+> show dbs
+local  0.000GB
+> db
+mongotest
+> db.createUser({
+... user: “hong”,
+... pwd: “hong123”,
+... roles: [
+... “readWrite”,
+... “dbAdmin”
+... ]
+... });
+2017-05-02T14:36:01.579+0900 E QUERY    [thread1] SyntaxError: illegal character @(shell):2:6
+
+> db.createUser({ user: "hong", pwd: "hong123", roles: ["readWrite", "dbAdmin"]});
+Successfully added user: { "user" : "hong", "roles" : [ "readWrite", "dbAdmin" ] }
+> db.createCollection('customers');
+{ "ok" : 1 }
+> show collections
+customers
+> db.customer.insert({first_name:"John",last_name:"Doe"});
+WriteResult({ "nInserted" : 1 })
+> db.customers.find();
+> db.customer.find();
+{ "_id" : ObjectId("59081b3d5f2698b2173d61fd"), "first_name" : "John", "last_name" : "Doe" }
+> db.customer.insert([{first_name:"Steven",last_name:"Smith"},{first_name:"Joan", last_name:"Johnson", gender:"female"}]);
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 2,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> db.customer.find();
+{ "_id" : ObjectId("59081b3d5f2698b2173d61fd"), "first_name" : "John", "last_name" : "Doe" }
+{ "_id" : ObjectId("59081bab5f2698b2173d61fe"), "first_name" : "Steven", "last_name" : "Smith" }
+{ "_id" : ObjectId("59081bab5f2698b2173d61ff"), "first_name" : "Joan", "last_name" : "Johnson", "gender" : "female" }
+> db.customer.find().pretty();;
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"John"},{first_name:"John", last_name:"Doe", gender:"male"});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();;
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"Steven"},{$set:{gender:"male"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();;
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"Steven"},{$set:{age:45}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"gender" : "male",
+	"age" : 45
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name: "Steven"}, {$inc:{age:5}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"gender" : "male",
+	"age" : 50
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"Steven"},{$unset:{age:1});
+... ;
+... });
+2017-05-02T14:44:17.480+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:56
+
+> db.customer.update({first_name:"Steven"},{$unset:{age:1})});
+2017-05-02T14:44:21.088+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:56
+
+> db.customer.update({first_name:"Steven"},{$unset:{age:1}));
+2017-05-02T14:44:24.676+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:56
+
+> db.customer.update({first_name:"Steven"},{$unset:{age:1}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"Mary"},{first_name:"Mary", last_name:"Samson"}, {upsert: true});
+WriteResult({
+	"nMatched" : 0,
+	"nUpserted" : 1,
+	"nModified" : 0,
+	"_id" : ObjectId("59081cfd558620be26d14726")
+})
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+> db.customer.update({first_name:"Steven"},{$rename:{"gender":"sex"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61fe"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"sex" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+> db.customer.remove({first_name:"Steven"});
+WriteResult({ "nRemoved" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+> db.customer.remove({first_name:"Steven"},{justOne:true});
+WriteResult({ "nRemoved" : 0 })
+> db.customer.find({$or:[{first_name:"John"}, {first_name:"Mary"}]});]
+2017-05-02T14:50:08.559+0900 E QUERY    [thread1] SyntaxError: expected expression, got ']' @(shell):1:67
+
+> db.customer.find({$or:[{first_name:"John"}, {first_name:"Mary"}]});
+{ "_id" : ObjectId("59081b3d5f2698b2173d61fd"), "first_name" : "John", "last_name" : "Doe", "gender" : "male" }
+{ "_id" : ObjectId("59081cfd558620be26d14726"), "first_name" : "Mary", "last_name" : "Samson" }
+> db.customer.find({$or:[{first_name:"John"}, {first_name:"Mary"}]}).pretty;;
+function () {
+    this._prettyShell = true;
+    return this;
+}
+> db.customer.find({$or:[{first_name:"John"}, {first_name:"Mary"}]}).pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+> db.customer.insert([{first_name:"Steven",last_name:"Smith"},{first_name:"Joan", last_name:"Johnson", gender:"female"}]);
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 2,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> db.customer.find().pretty();;
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081bab5f2698b2173d61ff"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6201"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.remove({first_name:"Joan"},{justOne:true});
+WriteResult({ "nRemoved" : 1 })
+> db.customer.find().pretty();;
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male"
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6201"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"John"}, {$set:{age:45}}}
+2017-05-02T14:55:33.135+0900 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:55
+
+> db.customer.update({first_name:"John"}, {$set:{age:45}}});
+2017-05-02T14:55:36.246+0900 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:55
+
+> db.customer.update({first_name:"John"}, {$set:{age:45}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male",
+	"age" : 45
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6201"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female"
+}
+> db.customer.update({first_name:"Joan"}, {$set:{age:26}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.update({first_name:"Steven"}, {$set:{age:62}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.update({first_name:"Mary"}, {$set:{age:31}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male",
+	"age" : 45
+}
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson",
+	"age" : 31
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"age" : 62
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6201"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female",
+	"age" : 26
+}
+> db.customer.find({age:{$lt:40}}).pretty();
+{
+	"_id" : ObjectId("59081cfd558620be26d14726"),
+	"first_name" : "Mary",
+	"last_name" : "Samson",
+	"age" : 31
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6201"),
+	"first_name" : "Joan",
+	"last_name" : "Johnson",
+	"gender" : "female",
+	"age" : 26
+}
+> db.customer.find({age:{$gt:40}}).pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male",
+	"age" : 45
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"age" : 62
+}
+> db.customer.find({age:{$gte:40}}).pretty();
+{
+	"_id" : ObjectId("59081b3d5f2698b2173d61fd"),
+	"first_name" : "John",
+	"last_name" : "Doe",
+	"gender" : "male",
+	"age" : 45
+}
+{
+	"_id" : ObjectId("59081e845f2698b2173d6200"),
+	"first_name" : "Steven",
+	"last_name" : "Smith",
+	"age" : 62
+}
+> db.customer.update({}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]});
+... ;
+... db.customer.find({age:{$gte:40}}).pretty();
+... );
+2017-05-02T14:58:52.066+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:45
+
+> db.customer.update({}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]}});
+2017-05-02T14:59:04.846+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:45
+
+> db.customer.update({}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]}}});
+2017-05-02T14:59:07.783+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:45
+
+> db.customer.update({first_name:"John"}}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]}}});
+2017-05-02T14:59:25.486+0900 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:38
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]}}});
+2017-05-02T14:59:37.513+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"]}});
+2017-05-02T14:59:39.817+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"}}});
+2017-05-02T15:00:10.902+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"}});
+... );
+2017-05-02T15:00:17.021+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"}}); );
+2017-05-02T15:00:46.194+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA"}});
+... );
+2017-05-02T15:00:50.458+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{address:[street:"19 Willis st", city: "Worchester", state: "MA”]}});
+2017-05-02T15:02:07.024+0900 E QUERY    [thread1] SyntaxError: missing ] after element list @(shell):1:62
+
+> db.customer.update({first_name:"John"}, {$set:{“address”:[street:"19 Willis st", city: "Worchester", state: "MA”]}});
+2017-05-02T15:03:15.948+0900 E QUERY    [thread1] SyntaxError: illegal character @(shell):1:47
+
+> db.customer.insert({first_name:"Jake”, last_name:”Simpson”, address: [street:"19 Willis st", city: "Worchester", state: "MA”]});
+2017-05-02T15:04:51.305+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:78
+
+> db.customer.insert({first_name:"Jake”, last_name:”Simpson”, address: [{street:"19 Willis st"}, {city: "Worchester"}, {state: "MA”}]});
+2017-05-02T15:05:49.295+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:79
+
+> db.customer.insert({first_name:"Jake”, last_name:”Simpson”, address: [street:"19 Willis st", city: "Worchester", state: "MA”]});
+2017-05-02T15:06:03.889+0900 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:78
+
+> db
+mongotest
+> db.createCollection('user');
+{ "ok" : 1 }
+> db
+mongotest
+> show dbs
+admin      0.000GB
+local      0.000GB
+mongotest  0.000GB
+> show collection
+2017-05-02T15:30:46.871+0900 E QUERY    [thread1] Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:865:11
+shellHelper@src/mongo/shell/utils.js:651:15
+@(shellhelp2):1:1
+
+> show collections
+customer
+customers
+user
+> db.customers.drop();
+true
+> db.user.drop();
+true
+> db.createCollection("quiz");
+{ "ok" : 1 }
+> show collections
+customer
+quiz
+> 
