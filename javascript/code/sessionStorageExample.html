@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>sessionStorage example</title>
+
+    <meta name="description" content="sessionStorage example">
+    <meta name="author" content="Hong">
+    
+    <!--<link rel="stylesheet" href="css/styles.css?v=1.0">-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <script>
+
+        let store = sessionStorage;
+
+        function newSession () {
+
+            let username = document.querySelector('.input');
+            let current = store.getItem('user');
+            let content = document.querySelector('.username');
+            let input = document.querySelector('.input');
+            
+            if(input.value !== '') {
+                username = input.value;
+            }
+            
+            if(!current) {
+                content.innerHTML +=
+                    'new user <b>' + username + '</b><br>';
+                store.setItem('user', username);
+            } else {
+                content.innerHTML +=
+                    'hey <b>' + input.value + '</b>, session is already occupied by - <b>' + current + '</b><br>';
+            }
+            
+            input.value = '';
+        }
+
+        function endSession () {
+
+            let current = store.getItem('user');
+            let content = document.querySelector('.username');
+
+            if(!current) {
+                content.innerHTML +=
+                    'no user on current session..<br>';
+            } else {
+                content.innerHTML +=
+                    'goodbye <b>'+ store.getItem('user')+'</b><br>';
+                store.removeItem('user');
+            }
+
+            document.querySelector('.input').value = '';
+        }
+        
+    </script>
+
+    <div>
+        <h2>sessionStorage example</h2>
+        <input type='text' class='input' value='' /> &nbsp;
+        <button onClick='newSession()'>newSession</button>
+        <button onClick='endSession()'>endSession</button>
+        <div>
+            <p class='username'></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
