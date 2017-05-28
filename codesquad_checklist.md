@@ -12,7 +12,7 @@ global / function scope
 ### [02] closure 는 언제 형성되는지? 경험한 코드가 있으면 코드로 보여주기.
 
 ```
-이미 실행 된 외부함수가 있는데 이 함수의 내부함수에서 외부함수를 참조할 때 발생하는 스코프 
+이미 실행 된 외부함수가 있는데 이 함수의 내부함수에서 외부함수를 참조할 때 발생하는 스코프.
 ```
 
 
@@ -20,6 +20,96 @@ global / function scope
 
 ```
 선언 후 재정의, 재할당을 하지 않는 변수.
+```
+
+
+### [04] mvc방식으로 개발한 사례가 있다면 본인이 느끼는 장단점을 설명하기.
+
+```
+장점: 코드를 목적이나 역할에 따라 파일/함수 단위로 분리할 수 있어, 디버깅 시 문제가 발생한 부분을 파악하기에 좋다.
+단점: 파일/함수간에 파라미터 전달이 많아진다. (수정할때 여러군데를 확인해야함)
+```
+
+
+### [05] 크롬개발자도구에서 js디버깅을 하는 방식을 설명해보기. 
+
+```
+개발자도구의 Sources 탭에서 js 파일을 선택하여 디버깅 하고자하는 라인 번호를 클릭하여 중단점을 추가/삭제할 수 있다. 
+혹은 js 파일에 'debugger;' 키워드를 추가하면 이 코드를 실행하는 순간 개발자도구가 실행되고 중단점을 보여준다.
+중단점에 머물러있는동안 Console에서 파일에 없는 코드를 실행해볼 수 있다.
+```
+
+
+### [08] 배열에서 제공하는 메서드 중에 filter와 map의 활용경험은? 
+
+```
+React 컴포넌트 내부의 <li>와 같은 반복적인 element tag를 생성할 때 filter, map을 활용했다.
+JSON object에서 특정 key의 value에 조건을 적용해 일부만 사용하고자 할 때 filter를 활용했고
+object 전체를 사용하는 경우에는 map을 활용했다.
+```
+
+
+### [14] 전역변수를 없앨 수 있는 방법들은 무엇인가? 
+
+```
+변수를 closure 내부에 선언한다. 즉시실행함수로 wrap하는 것이 한가지 방법이다. 
+다른 방법은 변수를 function의 property로 선언하는것이다.
+이런 경우 해당 변수를 function 내부에서만 사용할 수 있게 된다.
+```
+
+
+### [17] 문제가 있을때 본인이 가장 자주 사용하는 디버깅 과정은 무엇인가? 
+
+```
+에러메세지의 라인을 확인하고 해당 라인이 속한 function, loop 등 최하위 scope의 시작 라인에 중단점을 추가하여
+한 라인씩 실행시키면서 문제가 발생하는 부분을 찾는다. 문제를 찾지 못하면 상위 scope의 시작 라인으로 중단점을 변경한다.
+```
+
+
+### [18] github을 통해서 협업과정을 거치는 과정을 branch를 중심으로 설명하기. 
+
+```
+repository 생성 후 master branch는 배포버전을 push하도록 하고, 먼저 개발 branch를 생성한다.
+개발 branch에서 프로젝트의 초기 셋업을 마치면 개발 branch로부터 기능단위 branch를 생성한다. 
+기능 구현 완료 시 개발 branch로 merge하고 기능 branch를 삭제한다. 프로젝트 계획에 따라 배포버전이 완성되면 
+개발 branch를 master branch로 merge하는 과정을 반복한다.
+```
+
+
+### [19] jQuery를 사용하는 것의 장점과 단점은 무엇이라고 생각하는지.
+
+```
+장점: DOM element 조작과 attribute 수정이 편리하다.
+단점: pure javascript보다 속도가 느리다.
+```
+
+
+### [24] this를 변경시킬 수 있는 방법을 코드로 예시로 보여주기.
+
+```javascript
+// call
+var sayName = function() {
+	console.log('my name is ', + this.name);
+};
+var jeff = { name: 'jeff', age: 29 };
+sayName.call(jeff);
+
+// apply
+var sayName = function(lang1, lang2, lang3) {
+	console.log('my name is ', + this.name + ' and I know ' + lang1 + ', ' + lang2 + ', ' + lang3);
+};
+var jeff = { name: 'jeff', age: 29 };
+var languages = ['java', 'ruby', 'python'];
+sayName.apply(jeff, language);
+
+// bind
+var sayName = function(lang1, lang2, lang3) {
+	console.log('my name is ', + this.name + ' and I know ' + lang1 + ', ' + lang2 + ', ' + lang3);
+};
+var jeff = { name: 'jeff', age: 29 };
+var languages = ['java', 'ruby', 'python'];
+var newFunc = sayName.bind(jeff, language[0], language[1], language[2]);
+newFunc();
 ```
 
 
