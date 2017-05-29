@@ -218,6 +218,7 @@ http header에는 client/server가 request/response를 주고받을때 필요한
 ### [64] front-end 개발자의 역할은 어디까지 일까? 
 
 ```
-back-end 서버에서 제공받은 데이터를 html, css, javascript를 활용해 시각적으로 표현할 수 있다. static한 markup 결과물을 활용하여 dynamic한 기능을 구현할 수 있다.
+back-end 서버에서 제공받은 데이터를 html, css, javascript를 활용해 시각적으로 표현할 수 있다.
+static한 markup 결과물을 활용하여 dynamic한 기능을 구현할 수 있다.
 ```
 
