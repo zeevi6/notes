@@ -49,6 +49,15 @@ object 전체를 사용하는 경우에는 map을 활용했다.
 ```
 
 
+### [11] es6에서 본인이 생각할때 지난번대비 개선된 점은 무엇이고, 왜 그렇게 생각하는지? 
+
+```
+변수를 용도에 따라 let, const로 구분하여 사용할 수 있어 효율적이다.
+변경되지 않아야하는 상수가 존재하거나 block scope내에서만 사용 할 변수가 필요할 때 let, const를 사용하면 좋다.
+그리고 class가 공식적으로 지원되기때문에 객체지향적인 코드 작성이 가능하다는 점도 좋다고 생각한다.
+```
+
+
 ### [14] 전역변수를 없앨 수 있는 방법들은 무엇인가? 
 
 ```
@@ -164,6 +173,15 @@ addeventlistener에서 callback에 return false를 하면 preventDefault, stoppr
 ```
 
 
+### [42] template 을 어떻게 관리하는 게 좋다고 생각하는지 ? 
+
+```
+1. 별도 파일로 분리한다.
+2. 연산이나 조건식 등을 포함시키지 않는다.
+3. data가 변화하는 경우 template에 data를 bind한다.
+```
+
+
 ### [44] 팀프로젝트에서 제일 중요한 부분은 무엇이라고 생각하는가? 
 
 ```
@@ -189,6 +207,20 @@ addeventlistener에서 callback에 return false를 하면 preventDefault, stoppr
 ```
 
 
+### [51] 검색자동완성을 위한 수도코드를 작성해보세요. 
+
+```
+LISTEN EVENT ON 'text input change'
+IF 'text input change' TRIGGERS,
+	SET text input value AS input
+	GET search keywords WITH input FROM server
+	GET few item FROM search keywords AS output
+	RENDER output TO page
+ELSE,
+	DO NOTHING
+```
+
+
 ### [54] post와 get의 차이점을 설명하세요.
 
 ```
@@ -206,6 +238,14 @@ http header에는 client/server가 request/response를 주고받을때 필요한
 ```
 
 
+### [59] react, vue, angular라이브러리 중 하나를 골라야할때 어떤식으로 고를 예정인가요? 
+
+```
+각각의 라이브러리를 사용하여 개발된 대표적인 서비스가 무엇인지 조사하여 개발하고자하는 서비스와 성격과 환경이 유사한 케이스를 
+찾아내고 선택한다.
+```
+
+
 ### [60] 개발시 어려움이 많거나 풀리지 않을경우 어떤 해결방법을 사용하는가? 
 
 ```
@@ -213,6 +253,13 @@ http header에는 client/server가 request/response를 주고받을때 필요한
 관계가 적은 다른 부분의 개발을 시작하고, 몇시간후나 다음날 어려웠던 부분을 다시 개발한다. 머릿속에서 환기를 하고 나면
 새로운 생각이 떠오를 수도 있다. 당장 해결해야하는 경우에는 다른 개발자에게 내가 시도한 내용을 알려주고 의견을 구해본다.
 ```
+
+
+### [61] 배워나가는 기술을 공유하거나 기록하는 것들이 있는지? 
+
+[Hong Gwon – Medium](https://medium.com/@gwonhong.ord)
+[GitHub - zeevi6/notes: notes notes](https://github.com/zeevi6/notes)
+
 
 
 ### [64] front-end 개발자의 역할은 어디까지 일까? 
