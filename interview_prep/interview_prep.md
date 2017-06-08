@@ -72,14 +72,27 @@ PRIMITIVE vs REFERENCE
 > ex. class, interface, array
 
 ---
-ETC
+COLLECTION
 ===
-### static
-- class 로드 시 메모리 고정
-- object 여러개 만들어도 instance 하나만 유효
+### List
+순서가 있는 데이터의 집합, 중복 가능
+> ex. ArrayList, LinkedList, Stack, Vector
 
-### Garbage Collection
-사용하지 않는 동적 할당된 메모리 블럭을 찾아 회수
+### Set
+순서가 없는 데이터의 집합, 중복 불가능
+> ex. HashSet, TreeSet
+
+### Map
+순서가 없는 key-value pair 집합, value 중복 가능, key 중복 불가능
+> ex. HashMap, TreeMap, HashTable, Properties
+
+---
+SERIALIZATION
+===
+- object -> (serialization) -> data stream
+- 반대: deserialization
+- java.io.Serializable
+- transient: 직렬화 못하게 하는 keyword
 
 ---
 ACCESS MODIFIER
@@ -88,6 +101,16 @@ ACCESS MODIFIER
 - protected : 자기 패키지, 다른 패키지에서 상속받아 사용 가능
 - default : 같은 패키지 범위 사용 가능
 - private : 같은 클래스 범위 사용 가능
+
+---
+ETC
+===
+### static
+- class 로드 시 메모리 고정
+- object 여러개 만들어도 instance 하나만 유효
+
+### Garbage Collection
+사용하지 않는 동적 할당된 메모리 블럭을 찾아 회수
 
 ---
 OOP
