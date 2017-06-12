@@ -245,6 +245,12 @@ THREAD
 - 단 : deadlock(multiprogramming 에서 wait 상태에 빠짐)
 
 ---
+THREAD vs PROCESS (more)
+===
+- to be added...
+
+
+---
 SPRING
 ===
 
