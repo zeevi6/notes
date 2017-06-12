@@ -32,7 +32,7 @@ JAVA 특징
 - 어떻게 쓰일 지 모르니 비워두고 쓸 때 implement
 
 ---
-SOLID
+SOLID (5 object-oriented principles)
 ===
 - Single Responsibility Principal(SRP)
 - Open-Closed Principle(OCP)
