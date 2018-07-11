@@ -1,4 +1,4 @@
 # notes
 
 - notes notes and video tutorials
-- more codes : https://jsfiddle.net/user/dashboard/fiddles/
+- fabric.js stuff (https://jsfiddle.net/zeevi6/eecqL21a/)
